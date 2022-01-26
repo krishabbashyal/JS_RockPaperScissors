@@ -3,3 +3,40 @@ body{
     margin-top: 5%;
     justify-content: space-around;
 }
+
+.selectionButtons button{
+    width: 150px;
+    height: 35px;
+    margin-bottom: 15px ;
+}
+
+.playArea{
+    padding: 15px;
+    border: black dotted 1px;
+    width: 25%;
+    margin: auto;
+}
+
+
+.currentScores{
+    width: 11%;
+    margin: auto;
+
+}
+
+.playerScore{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.computerScore{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.scoreNumber{
+    align-items: right;
+}

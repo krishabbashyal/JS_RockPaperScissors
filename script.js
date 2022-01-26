@@ -1,77 +1,55 @@
-console.log("Welcome to Rock Paper Scissors, click the button to start the game");
-
-function playGame(){
+function getUserSelect(userSelect){
+    console.log("You Picked: " + userSelect);
     let userWin = 0;
     let computerWin = 0;
-    while((userWin < 3) && (computerWin < 3)){
+
+    while((userWin < 3) && (computerWin < 3) && (userSelect != null)){
         function computerPlay(){
-            let selections = ["rock","paper","scissors"];
-            return selections[Math.floor(Math.random() * selections.length)]
+            let selections = ["Rock","Paper","Scissors"];
+            return selections[Math.floor(Math.random() * selections.length)];
         }
 
-        function userPlay(){
-            let selections = prompt("Rock, Paper, or Scissors: ")
-            return selections
-        }
-
-        let computerSelect = computerPlay()
-
-        let userSelect = userPlay()
-        userSelect = userSelect.toLowerCase();
+        let computerSelect = computerPlay();
+        console.log("The Computer Picked: " + computerSelect);
 
         function determineWinner(computerSelect, userSelect){
             if (computerSelect === userSelect){
                 console.log("Tie, No one gained any points.")
             }
 
-            else if (computerSelect === "rock" && userSelect === "paper"){
+            else if (computerSelect === "Rock" && userSelect === "Paper"){
                 userWin += 1;
                 console.log("Paper beats Rock, User gained one point.")
             }
-            else if (computerSelect === "rock" && userSelect === "scissors"){
+            else if (computerSelect === "Rock" && userSelect === "Scissors"){
                 computerWin += 1;
                 console.log("Rock beats Scissors, Computer gained one point.")
             }
 
 
 
-            else if (computerSelect === "scissors" && userSelect === "paper"){
+            else if (computerSelect === "Scissors" && userSelect === "Paper"){
                 computerWin += 1;
                 console.log("Scissors beats Paper, Computer gained one point.")
             }
-            else if (computerSelect === "scissors" && userSelect === "rock"){
+            else if (computerSelect === "Scissors" && userSelect === "Rock"){
                 userWin += 1;
                 console.log("Rock beats Scissors, User gained one point.")
             }
 
 
-            else if (computerSelect === "paper" && userSelect === "rock"){
+            else if (computerSelect === "Paper" && userSelect === "Rock"){
                 computerWin += 1;
                 console.log("Paper beats Rock, Computer gained one point.")
             }
-            else if (computerSelect === "paper" && userSelect === "scissors"){
+            else if (computerSelect === "Paper" && userSelect === "Scissors"){
                 userWin += 1;
                 console.log("Scissors beats Paper, User gained one point.")
             }
         }
 
-        console.log("\nComputer Picked: " + computerSelect.charAt(0).toUpperCase() + computerSelect.slice(1));
-        console.log("User Picked: " + userSelect.charAt(0).toUpperCase() + userSelect.slice(1));
-
-        determineWinner(computerSelect, userSelect)
-        console.log("Computer: " + computerWin)
-        console.log("User: " + userWin)
-        console.log("\n")
+        determineWinner(computerSelect, userSelect);
+        userSelect = null;
     }
-
-    function checkWinner(computerWin, userWin){
-        if (computerWin > userWin){
-            return "\nThe computer has won the game, click the start button to play again"
-        }
-        else{
-            return "\nThe user has won the game, click the start button to play again"
-        }
-    }
-
-    console.log(checkWinner(computerWin, userWin));
 }
+
