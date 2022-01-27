@@ -14,42 +14,83 @@ function getUserSelect(userSelect){
 
         function determineWinner(computerSelect, userSelect){
             if (computerSelect === userSelect){
-                console.log("Tie, No one gained any points.")
+                return ("Tie, No one gained any points.")
             }
 
             else if (computerSelect === "Rock" && userSelect === "Paper"){
-                userWin += 1;
-                console.log("Paper beats Rock, User gained one point.")
+                let itemScore = document.getElementById("userScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                userScore.innerHTML = scoreNum;
+                return ("Paper beats Rock, The user has gained one point.")
             }
             else if (computerSelect === "Rock" && userSelect === "Scissors"){
-                computerWin += 1;
-                console.log("Rock beats Scissors, Computer gained one point.")
+                let itemScore = document.getElementById("cpuScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                cpuScore.innerHTML = scoreNum;
+
+                return ("Rock beats Scissors, The computer has gained one point.")
             }
-
-
 
             else if (computerSelect === "Scissors" && userSelect === "Paper"){
-                computerWin += 1;
-                console.log("Scissors beats Paper, Computer gained one point.")
+                let itemScore = document.getElementById("cpuScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                cpuScore.innerHTML = scoreNum;
+                return ("Scissors beats Paper, The computer has gained one point.")
             }
             else if (computerSelect === "Scissors" && userSelect === "Rock"){
-                userWin += 1;
-                console.log("Rock beats Scissors, User gained one point.")
+                let itemScore = document.getElementById("userScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                userScore.innerHTML = scoreNum;
+                return ("Rock beats Scissors, The user has gained one point.")
             }
 
 
             else if (computerSelect === "Paper" && userSelect === "Rock"){
-                computerWin += 1;
-                console.log("Paper beats Rock, Computer gained one point.")
+                let itemScore = document.getElementById("cpuScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                cpuScore.innerHTML = scoreNum;
+                return ("Paper beats Rock, The computer has gained one point.")
             }
             else if (computerSelect === "Paper" && userSelect === "Scissors"){
-                userWin += 1;
-                console.log("Scissors beats Paper, User gained one point.")
+                let itemScore = document.getElementById("userScore");
+                let scoreNum = itemScore.innerHTML;
+                scoreNum++;
+                userScore.innerHTML = scoreNum;
+                return ("Scissors beats Paper, The user has gained one point.");
             }
         }
 
-        determineWinner(computerSelect, userSelect);
-        userSelect = null;
+        let playAreaText = determineWinner(computerSelect, userSelect);
+        document.getElementById("playAreaText").innerHTML = playAreaText;
+
+
+        userSelect = null; // Stops the a continious loop from happening by clearing the userSelect variable
+                           // Allows the user to press another button and go through the program again, rather then just
+                           // Using the first button that was clicked, but having another CPU selection.
+       
+        let grabUser = document.getElementById("userScore");
+        let grabCPU = document.getElementById("cpuScore");
+        let userScoreCheck = grabUser.innerHTML;
+        let cpuScoreCheck = grabCPU.innerHTML;
+        if((cpuScoreCheck == 3)||(userScoreCheck == 3)){
+            document.getElementById("rockButton").disabled = true; 
+            document.getElementById("paperButton").disabled = true; 
+            document.getElementById("scissorsButton").disabled = true; 
+            if(cpuScoreCheck == 3){
+                document.getElementById("gameOver").innerHTML = "Game Over!";
+                document.getElementById("computerWon").innerHTML = "Better luck next time, the Computer has won.";
+            }
+            else{
+                document.getElementById("gameOver").innerHTML = "Game Over!";
+                document.getElementById("userWon").innerHTML = "You win! You have defeated the Computer.";
+            }
+        }
+
     }
 }
 
