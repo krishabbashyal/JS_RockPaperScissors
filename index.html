@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2>Make your selection to begin the game.</h2>
-    <h3>The computer will make selections as well, first to 3 wins.</h3>
+    <div class = "header">
+        <h1>Rock, Paper, Scissors</h1>
+    </div>
+        <h2>Make your selection to begin the game.</h2>
+        <h3>The computer will make selections as well, first to 3 wins.</h3>
 
     <div class = "selectionButtons">
         <button id = "rockButton" onclick = "getUserSelect('Rock')">Rock</button>
@@ -33,7 +35,7 @@
             <h3 id = "cpuScore">0</h3>
         </div>
     </div>
-    <button onClick="window.location.reload();">Restart</button>
+    <button class = "restartButton" onClick="window.location.reload();">Restart</button>
 </body>
 <script src="script.js"></script>
 </html>

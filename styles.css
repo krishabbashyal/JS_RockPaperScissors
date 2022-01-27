@@ -1,7 +1,17 @@
 body{
     text-align: center;
-    margin-top: 5%;
+    margin: 0;
+    padding: 0;
     justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.header{
+    background-color: #29487d;
+    color: #ffffff;
+    padding: .4%;
+
 }
 
 .selectionButtons button{
@@ -12,9 +22,10 @@ body{
 
 .playArea{
     padding: 15px;
-    border: black dotted 1px;
+    border: #9cb2ce solid 3px;
     width: 35%;
     margin: auto;
+    font-size: 20px;
 }
 
 
@@ -39,4 +50,12 @@ body{
 
 .scoreNumber{
     align-items: right;
+}
+
+.restartButton{
+    background-color: #dc3545;
+    color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
 }
