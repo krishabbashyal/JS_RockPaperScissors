@@ -8,11 +8,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Open the browser's console to play!</h1>
-    <h2>Click the button to begin the game!</h2>
+    <div class = "header">
+        <h1>Rock, Paper, Scissors</h1>
+    </div>
+        <h2>Make your selection to begin the game.</h2>
+        <h3>The computer will make selections as well, first to 3 wins.</h3>
 
-
-    <button onclick ="playGame()">Start</button>
+    <div class = "selectionButtons">
+        <button id = "rockButton" onclick = "getUserSelect('Rock')">Rock</button>
+        <button id = "paperButton" onclick = "getUserSelect('Paper')">Paper</button>
+        <button id = "scissorsButton" onclick = "getUserSelect('Scissors')">Scissors</button>
+    </div>
+    <div class = "playArea">
+        <p id = "playAreaText">Click one of the buttons above to begin.</p>
+        <h2 id = "gameOver"></h2>
+        <h2 id = "computerWon"></h2>
+        <h2 id = "userWon"></h2>
+    </div>
+    <div class = "currentScores">
+        <div class = "playerScore">
+            <h3 class = "scoreOwner">Your Score: </h3>
+            <h3 id = "userScore">0</h3>
+        </div>
+        <div class = "computerScore">
+            <h3>CPU's Score: </h3>
+            <h3 id = "cpuScore">0</h3>
+        </div>
+    </div>
+    <button class = "restartButton" onClick="window.location.reload();">Restart</button>
 </body>
 <script src="script.js"></script>
 </html>
+
+
+
+
+
