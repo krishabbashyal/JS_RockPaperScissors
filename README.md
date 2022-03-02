@@ -1,4 +1,4 @@
-rock-paper-scissors
+#rock-paper-scissors
 
 A Rock, Paper, Scissors game that is played by one player and the 
 computer in the browser window, with a user interface. This 
